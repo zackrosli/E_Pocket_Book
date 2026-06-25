@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="ms">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#102e4a" />
+    <title>Profil Anggota</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="profile-card app-page" id="profile-page" aria-labelledby="page-title">
+        <header class="hero">
+          <div class="brand">
+            <span>E-Pocket Book</span>
+          </div>
+        </header>
+
+        <div class="profile-heading">
+          <label class="avatar" for="photo-input" title="Tukar gambar profil">
+            <span id="avatar-placeholder">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 12a5 5 0 1 0 0-10 5 5 0 0 0 0 10Zm0 2c-5.52 0-10 2.69-10 6v2h20v-2c0-3.31-4.48-6-10-6Z"/></svg>
+            </span>
+            <img id="avatar-preview" alt="Gambar profil anggota" hidden />
+            <span class="camera-badge" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M9 3 7.17 5H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-3.17L15 3H9Zm3 15a5 5 0 1 1 0-10 5 5 0 0 1 0 10Zm0-2.2a2.8 2.8 0 1 0 0-5.6 2.8 2.8 0 0 0 0 5.6Z"/></svg>
+            </span>
+          </label>
+          <input id="photo-input" type="file" accept="image/*" hidden />
+          <p class="eyebrow">Profil anggota</p>
+          <h1 id="page-title">Maklumat Peribadi</h1>
+          <p class="subtitle">Semak dan lengkapkan maklumat anda.</p>
+        </div>
+
+        <form id="profile-form">
+          <div class="fields">
+            <label class="field">
+              <span>Nama</span>
+              <input type="text" name="nama" placeholder="Masukkan nama penuh" autocomplete="name" />
+            </label>
+
+            <label class="field">
+              <span>Jawatan / Pangkat</span>
+              <select name="jawatan">
+                <option value="" selected disabled>Pilih jawatan / pangkat</option>
+                <option>Konstabel</option>
+                <option>Lans Koperal</option>
+                <option>Koperal</option>
+                <option>Sarjan</option>
+                <option>Sub Inspektor</option>
+                <option>Inspektor</option>
+              </select>
+            </label>
+
+            <div class="field-grid">
+              <label class="field">
+                <span>No. Badan</span>
+                <input type="text" name="noBadan" placeholder="P12345" />
+              </label>
+              <label class="field">
+                <span>Kontinjen</span>
+                <select name="kontinjen">
+                  <option value="" selected disabled>Pilih kontinjen</option>
+                  <option>Johor</option>
+                  <option>Kedah</option>
+                  <option>Kelantan</option>
+                  <option>Kuala Lumpur</option>
+                  <option>Melaka</option>
+                  <option>Negeri Sembilan</option>
+                  <option>Pahang</option>
+                  <option>Perak</option>
+                  <option>Perlis</option>
+                  <option>Pulau Pinang</option>
+                  <option>Sabah</option>
+                  <option>Sarawak</option>
+                  <option>Selangor</option>
+                  <option>Terengganu</option>
+                </select>
+              </label>
+            </div>
+
+            <label class="field">
+              <span>Daerah</span>
+              <select name="daerah">
+                <option value="" selected disabled>Pilih daerah</option>
+                <option>IPD KLIA</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Jabatan / Cawangan / Bahagian</span>
+              <select name="cawangan">
+                <option value="" selected disabled>Pilih jabatan / cawangan / bahagian</option>
+                <option>Bahagian Logistik dan Teknologi</option>
+              </select>
+            </label>
+
+            <label class="field">
+              <span>Tempat Tugas</span>
+              <select name="tempatTugas">
+                <option value="" selected disabled>Pilih tempat tugas</option>
+                <option>Unit Pemusnahan Bom</option>
+              </select>
+            </label>
+          </div>
+
+          <div class="quick-actions" aria-label="Tindakan pantas">
+            <button class="action-card" type="button" id="pocket-button">
+              <span class="action-icon book-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M18 2H7a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h11a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Zm-6 3h5v2h-5V5Zm6 15H7a1 1 0 0 1 0-2h11v2Z"/></svg>
+              </span>
+              <span><strong>e-Pocket Book</strong><small>Rekod digital anda</small></span>
+              <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+
+            <button class="action-card" type="button" id="phone-button">
+              <span class="action-icon phone-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.62 10.79a15.46 15.46 0 0 0 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1C10.61 21 3 13.39 3 4c0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2Z"/></svg>
+              </span>
+              <span><strong>No. Telefon</strong><small>Kemaskini nombor</small></span>
+              <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+
+          <button class="save-button" type="submit">Simpan maklumat</button>
+          <button class="logout-button" type="button" id="logout-button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M10 17v3H5V4h5v3h2V2H3v20h9v-5h-2Zm5-10-1.4 1.4 2.6 2.6H8v2h8.2l-2.6 2.6L15 17l5-5-5-5Z"/></svg>
+            Log keluar
+          </button>
+        </form>
+      </section>
+
+      <section class="menu-page app-page" id="pocket-page" aria-labelledby="pocket-title" hidden>
+        <header class="pocket-header">
+          <button class="back-icon" type="button" id="back-button" aria-label="Kembali ke profil">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <div>
+            <p class="pocket-eyebrow">e-Anggota</p>
+            <h1 id="pocket-title">e-Pocket Book</h1>
+          </div>
+          <span class="header-book" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M18 2H7a3 3 0 0 0-3 3v14a3 3 0 0 0 3 3h11a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2Zm-6 3h5v2h-5V5Zm6 15H7a1 1 0 0 1 0-2h11v2Z"/></svg>
+          </span>
+        </header>
+
+        <div class="pocket-content">
+          <div class="welcome-block">
+            <p class="eyebrow">Menu utama</p>
+            <h2>Pilih perkhidmatan</h2>
+            <p>Akses catatan, rekod dan pengesahan anda di sini.</p>
+          </div>
+
+          <nav class="menu-grid" aria-label="Menu e-Pocket Book">
+            <button class="menu-tile tile-blue" type="button" data-menu="Catatan">
+              <span class="tile-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h11l3 3v15H5V3Zm10 1.8V8h3.2L15 4.8ZM8 12h8v-2H8v2Zm0 4h8v-2H8v2Zm0 4h6v-2H8v2Z"/></svg>
+              </span>
+              <span><strong>Catatan</strong><small>Cipta catatan baharu</small></span>
+              <svg class="tile-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+
+            <button class="menu-tile tile-purple" type="button" data-menu="Rekod Catatan">
+              <span class="tile-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 4h16v17H4V4Zm3-3h2v5H7V1Zm8 0h2v5h-2V1ZM7 10h10V8H7v2Zm0 4h10v-2H7v2Zm0 4h7v-2H7v2Z"/></svg>
+              </span>
+              <span><strong>Rekod Catatan</strong><small>Lihat sejarah catatan</small></span>
+              <svg class="tile-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+
+            <button class="menu-tile tile-orange" type="button" data-menu="Penyelia">
+              <span class="tile-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm6.5 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM9 13c-4.42 0-8 2.24-8 5v3h11v-3c0-1.13.55-2.15 1.5-2.98C12.27 13.77 10.65 13 9 13Zm6.5 1c-2.49 0-4.5 1.57-4.5 3.5V21h9v-3.5c0-1.93-2.01-3.5-4.5-3.5Z"/></svg>
+              </span>
+              <span><strong>Penyelia</strong><small>Maklumat penyelia</small></span>
+              <svg class="tile-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+
+            <button class="menu-tile tile-teal" type="button" data-menu="QR">
+              <span class="tile-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h8v8H3V3Zm2 2v4h4V5H5Zm8-2h8v8h-8V3Zm2 2v4h4V5h-4ZM3 13h8v8H3v-8Zm2 2v4h4v-4H5Zm8-2h3v3h-3v-3Zm5 0h3v5h-2v3h-3v-5h2v-3Zm-5 5h3v3h-3v-3Z"/></svg>
+              </span>
+              <span><strong>QR</strong><small>Imbas atau papar kod</small></span>
+              <svg class="tile-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+
+            <button class="menu-tile tile-green menu-wide" type="button" data-menu="Pengesahan">
+              <span class="tile-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m12 2 8 3v6c0 5.05-3.41 9.74-8 11-4.59-1.26-8-5.95-8-11V5l8-3Zm-1.1 13.7 5.65-5.65-1.4-1.4-4.25 4.24-2.05-2.04-1.4 1.4 3.45 3.45Z"/></svg>
+              </span>
+              <span><strong>Pengesahan</strong><small>Status dan kelulusan catatan</small></span>
+              <svg class="tile-arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </nav>
+
+          <button class="pocket-back-button" type="button" id="bottom-back-button">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            Kembali
+          </button>
+        </div>
+      </section>
+
+      <section class="note-page app-page" id="note-page" aria-labelledby="note-title" hidden>
+        <header class="note-header">
+          <button class="back-icon" type="button" id="note-back-button" aria-label="Kembali ke e-Pocket Book">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <div>
+            <p class="pocket-eyebrow">e-Pocket Book</p>
+            <h1 id="note-title">Catatan</h1>
+          </div>
+          <span class="header-book note-symbol" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M5 3h11l3 3v15H5V3Zm10 1.8V8h3.2L15 4.8ZM8 12h8v-2H8v2Zm0 4h8v-2H8v2Z"/></svg>
+          </span>
+        </header>
+
+        <form class="note-form" id="note-form">
+          <div class="date-card">
+            <button class="date-arrow" type="button" id="previous-day" aria-label="Hari sebelumnya">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            </button>
+            <div class="date-details">
+              <p id="note-day">Memuatkan...</p>
+              <strong id="note-date">—</strong>
+              <span id="note-time" aria-live="polite">— HRS</span>
+            </div>
+            <button class="date-arrow" type="button" id="next-day" aria-label="Hari seterusnya">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 18 6-6-6-6"/></svg>
+            </button>
+          </div>
+
+          <div class="note-meta">
+            <span>Catatan harian</span>
+            <span>Bil: <strong id="note-number">23</strong></span>
+          </div>
+
+          <div class="supervisor-section">
+            <label class="field" for="supervisor-input">
+              <span>Penyelia</span>
+              <div class="search-control">
+                <input id="supervisor-input" name="penyelia" type="text" value="SI ISMAIL" placeholder="Nama atau no. badan penyelia" />
+                <button type="button" id="supervisor-search">Carian</button>
+              </div>
+            </label>
+            <div class="supervisor-result" id="supervisor-result" hidden>
+              <span class="result-avatar">SI</span>
+              <span><strong>SI ISMAIL</strong><small>Penyelia bertugas</small></span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 12 2 2 4-4"/></svg>
+            </div>
+          </div>
+
+          <label class="field note-field" for="note-text">
+            <span>Catatan</span>
+            <textarea id="note-text" name="catatan" rows="10" placeholder="Tulis aktiviti, tugasan atau laporan harian anda di sini..." required></textarea>
+            <small><span id="character-count">0</span>/1000 aksara</small>
+          </label>
+
+          <button class="submit-note" type="submit">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 20 18-8L3 4v6l13 2-13 2v6Z"/></svg>
+            Simpan
+          </button>
+        </form>
+      </section>
+
+      <section class="records-page app-page" id="records-page" aria-labelledby="records-title" hidden>
+        <header class="note-header">
+          <button class="back-icon" type="button" id="records-back-button" aria-label="Kembali ke e-Pocket Book">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <div>
+            <p class="pocket-eyebrow">e-Pocket Book</p>
+            <h1 id="records-title">Rekod Catatan</h1>
+          </div>
+          <span class="header-book" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M4 4h16v17H4V4Zm3-3h2v5H7V1Zm8 0h2v5h-2V1ZM7 10h10V8H7v2Zm0 4h10v-2H7v2Zm0 4h7v-2H7v2Z"/></svg>
+          </span>
+        </header>
+
+        <div class="records-content">
+          <form class="records-filter" id="records-filter">
+            <p class="filter-title">Carian tarikh</p>
+            <div class="date-filter-grid">
+              <label>
+                <span>Dari</span>
+                <input type="date" id="date-from" name="dateFrom" />
+              </label>
+              <label>
+                <span>Hingga</span>
+                <input type="date" id="date-to" name="dateTo" />
+              </label>
+            </div>
+            <div class="filter-actions">
+              <button type="submit">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 20-4.35-4.35a7.5 7.5 0 1 0-1.41 1.41L19.59 21 21 20ZM5 11a6 6 0 1 1 12 0 6 6 0 0 1-12 0Z"/></svg>
+                Cari
+              </button>
+              <button type="button" id="reset-filter">Set semula</button>
+            </div>
+          </form>
+
+          <div class="records-summary">
+            <span>Senarai rekod</span>
+            <span><strong id="records-count">0</strong> catatan</span>
+          </div>
+
+          <div class="records-list" id="records-list"></div>
+
+          <div class="empty-records" id="empty-records">
+            <span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h11l3 3v15H5V3Zm10 1.8V8h3.2L15 4.8ZM8 12h8v-2H8v2Zm0 4h8v-2H8v2Z"/></svg>
+            </span>
+            <strong>Belum ada rekod</strong>
+            <p>Catatan yang disimpan akan dipaparkan di sini.</p>
+          </div>
+
+          <button class="pocket-back-button" type="button" id="records-bottom-back">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            Kembali
+          </button>
+        </div>
+      </section>
+
+      <section class="supervisors-page app-page" id="supervisors-page" aria-labelledby="supervisors-title" hidden>
+        <header class="note-header">
+          <button class="back-icon" type="button" id="supervisors-back-button" aria-label="Kembali ke e-Pocket Book">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+          </button>
+          <div>
+            <p class="pocket-eyebrow">e-Pocket Book</p>
+            <h1 id="supervisors-title">Penyelia</h1>
+          </div>
+          <span class="header-book" aria-hidden="true">
+            <svg viewBox="0 0 24 24"><path d="M9 11a4 4 0 1 0 0-8 4 4 0 0 0 0 8Zm6.5 1a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7ZM9 13c-4.42 0-8 2.24-8 5v3h11v-3c0-1.13.55-2.15 1.5-2.98C12.27 13.77 10.65 13 9 13Zm6.5 1c-2.49 0-4.5 1.57-4.5 3.5V21h9v-3.5c0-1.93-2.01-3.5-4.5-3.5Z"/></svg>
+          </span>
+        </header>
+
+        <div class="supervisors-content">
+          <div class="supervisors-intro">
+            <p class="eyebrow">Senarai anggota</p>
+            <h2>Anggota Diselia</h2>
+            <p>Pilih anggota untuk membuka rekod e‑Pocket Book.</p>
+          </div>
+
+          <div class="member-list">
+            <article class="member-card">
+              <span class="member-number">1</span>
+              <span class="member-avatar">ME</span>
+              <span class="member-info">
+                <strong>KPL RF•••••• MUHD EMIR</strong>
+                <small>Koperal · Unit Pemusnahan Bom</small>
+              </span>
+              <button type="button" class="open-member" data-member="KPL RF•••••• MUHD EMIR">Buka</button>
+            </article>
+
+            <article class="member-card">
+              <span class="member-number">2</span>
+              <span class="member-avatar">SA</span>
+              <span class="member-info">
+                <strong>KPL RF•••••• SALMAN</strong>
+                <small>Koperal · Unit Pemusnahan Bom</small>
+              </span>
+              <button type="button" class="open-member" data-member="KPL RF•••••• SALMAN">Buka</button>
+            </article>
+
+            <article class="member-card">
+              <span class="member-number">3</span>
+              <span class="member-avatar">YC</span>
+              <span class="member-info">
+                <strong>L/KPL RF•••••• YONG CHUN</strong>
+                <small>Lans Koperal · Unit Pemusnahan Bom</small>
+              </span>
+              <button type="button" class="open-member" data-member="L/KPL RF•••••• YONG CHUN">Buka</button>
+            </article>
+
+            <article class="member-card">
+              <span class="member-number">4</span>
+              <span class="member-avatar">VI</span>
+              <span class="member-info">
+                <strong>KONST RF•••••• VIVEK</strong>
+                <small>Konstabel · Unit Pemusnahan Bom</small>
+              </span>
+              <button type="button" class="open-member" data-member="KONST RF•••••• VIVEK">Buka</button>
+            </article>
+          </div>
+
+          <div class="selected-member" id="selected-member" hidden>
+            <div>
+              <span class="selected-label">Anggota dipilih</span>
+              <strong id="selected-member-name"></strong>
+            </div>
+            <button type="button" id="view-member-records">Lihat rekod</button>
+          </div>
+
+          <button class="pocket-back-button" type="button" id="supervisors-bottom-back">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 18-6-6 6-6"/></svg>
+            Kembali
+          </button>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="app.js"></script>
+  </body>
+</html>
